@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Günlük Su İhtiyacı</title>
+  <link rel="stylesheet" href="water.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <a href="idealweight.html">İdeal Kilo</a>
+    <a href="water.html">Su İhtiyacı</a>
+    <a href="calorie.html">Kalori İhtiyacı</a>
+  </nav>
+
+  <div class="container">
+    <h1>Günlük Su İhtiyacı Hesaplayıcı</h1>
+    <form id="waterForm">
+      <label for="weight">Kilonuz (kg)</label>
+      <input type="number" id="weight" min="0" required />
+      <button type="submit">Hesapla</button>
+    </form>
+    <div id="result"></div>
+  </div>
+
+  <script src="water.js"></script>
+</body>
+</html>
