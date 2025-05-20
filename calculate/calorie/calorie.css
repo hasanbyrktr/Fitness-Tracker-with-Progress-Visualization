@@ -4,7 +4,31 @@ body {
   margin: 0;
   padding: 0;
 }
+.navbar-nav .nav-link {
+      position: relative;
+      color: black;
+      transition: color 0.3s ease;
+      font-weight: 700;
+    }
 
+.navbar-nav .nav-link:hover {
+      color: red;
+      font-weight: 700;
+    }
+
+.navbar-nav .nav-link::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 4px;
+      background-color: red;
+      left: 0;
+      bottom: -20px;
+      transition: width 0.3s ease;
+    }
+.navbar-nav .nav-link:hover::after {
+      width: 100%;
+}
 .container {
   background-color: white;
   max-width: 450px;
@@ -22,27 +46,8 @@ body {
       font-weight: 700;
     }
   
-    .navbar-nav .nav-link:hover {
-      color: red;
-      font-weight: 700;
-    }
-  
-    .navbar-nav .nav-link::after {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 4px;
-      background-color: red;
-      left: 0;
-      bottom: -20px;
-      transition: width 0.3s ease;
-    }
-  
-    .navbar-nav .nav-link:hover::after {
-      width: 100%;
-    }
-  
 
+  
 h1 {
   text-align: center;
   margin-bottom: 20px;
@@ -68,9 +73,8 @@ select {
   box-sizing: border-box;
 }
 
-button {
+.container button {
   margin-top: 10px;
-  width: 100%;
   padding: 10px;
   background-color: #00b894;
   border: none;
@@ -81,10 +85,9 @@ button {
   font-weight: bold;
 }
 
-button:hover {
+.container button:hover {
   background-color: #009f7f;
 }
-
 .result {
   margin-top: 20px;
   font-size: 18px;
