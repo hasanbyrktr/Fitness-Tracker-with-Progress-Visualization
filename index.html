@@ -7,34 +7,47 @@
   <title>CoreX</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+
+    <!-- fontaWesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+     crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <style>
-    /* yazı rengi ve underline HOVER STİLİ */
+    /* NAVBAR yazı rengi ve underline HOVER STİLİ */
     .navbar-nav .nav-link {
-      position: relative;
-      color: black;
-      transition: color 0.3s ease;
-      font-weight: 700;
-    }
+  position: relative;
+  color: #222;
+  font-weight: 700;
+  padding-bottom: 6px;
+  transition: color 0.4s ease, transform 0.3s ease, text-shadow 0.3s ease;
+  will-change: color, transform, text-shadow;
+  cursor: pointer;
+}
 
-    .navbar-nav .nav-link:hover {
-      color: red;
-      font-weight: 700;
-    }
+.navbar-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #ff3b3b, #ff7b7b);
+  left: 0;
+  bottom: 0;
+  border-radius: 3px;
+  transition: width 0.4s ease;
+}
 
-    .navbar-nav .nav-link::after {
-      content: "";
-      position: absolute;
-      width: 0;
-      height: 4px;
-      background-color: red;
-      left: 0;
-      bottom: -10px;
-      transition: width 0.3s ease;
-    }
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+  color: #ff3b3b;
+  transform: scale(1.08);
+  text-shadow: 0 2px 6px rgba(255, 59, 59, 0.5);
+}
 
-    .navbar-nav .nav-link:hover::after {
-      width: 100%;
-    }
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link:focus::after {
+  width: 100%;
+}
+
 
     /* carousel yazılarının ayarı için */
     .carousel-caption {
@@ -136,10 +149,13 @@
 
     /* telefon çerçevesi ve ekran ayarları */
     .phone-container {
+  width: 600px;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 600 / 550;
   position: relative;
-  width: 600px;  
-  height: 600x; 
 }
+
 
 .phone-frame {
   width: 100%;
@@ -159,6 +175,46 @@
   z-index: 1;
   object-fit: cover;
 }
+
+/* dark mode için */
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .navbar, 
+body.dark-mode footer {
+  background-color: #1f1f1f !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-mode a.nav-link {
+  color: #ff7b7b !important;
+}
+
+body.dark-mode a.nav-link:hover,
+body.dark-mode a.nav-link:focus {
+  color: #ff3b3b !important;
+}
+
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 12px rgba(255, 59, 59, 0.2);
+  border-color: #ff3b3b;
+}
+
+body.dark-mode .card-text,
+body.dark-mode .card-title {
+  color: #f5f5f5;
+}
+
+/* Video üstü yazılar gibi beyaz yazıların renk ayarı  */
+body.dark-mode .carousel-caption h5,
+body.dark-mode .carousel-caption p {
+  color: #f0f0f0 !important;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+}
+
 
   </style>
 </head>
@@ -190,11 +246,14 @@
             <a class="nav-link active" href="/calculate/ideal-weight/idealweight.html">İdeal kilo</a>
           </li>
           <li class="nav-item mx-2">
-            <a class="nav-link active" href="/exercise/exercise.html">Antreman Önerici</a>
+            <a class="nav-link active" href="/exercise/exercise.html">Antrenman Önerici</a>
           </li>
           <li class="nav-item mx-2">
             <a class="nav-link active" href="/fat-muscle-chart/fat-muscle.html">Yağ-Kas Oranı</a>
-          </li>
+
+          </li><button id="darkModeToggle"><i class="fa-solid fa-circle-half-stroke"></i>dark</button>
+
+
         </ul>
       </div>
     </div>
@@ -358,15 +417,35 @@
   <div class="container">
     <div class="row align-items-center justify-content-center">
       <div class="col-md-6 text-center text-md-start">
-        <h1 style="font-weight: 900; font-size: 4rem; line-height: 1; margin-bottom: 0;">
-          <span style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Core</span>
-          <span style="color: red; display: inline-block; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">X</span>
-        </h1>
-        <p style="font-size: 1.3rem; margin-top: 1rem;">
-          CoreX uygulaması, sağlıklı yaşamı destekleyen, kişisel antrenman programları ve diyet planları sunan bir platformdur.
-          Kullanıcılar, hedeflerine uygun egzersiz ve beslenme önerileri alarak daha fit ve sağlıklı bir yaşam tarzı benimseyebilirler.
-        </p>
+  <h1 style="font-weight: 900; font-size: 4rem; line-height: 1; margin-bottom: 0;">
+    <span style="text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">Core</span>
+    <span style="color: red; display: inline-block; text-shadow: 2px 2px 4px rgba(0,0,0,0.3);">X</span>
+  </h1>
+  <p style="font-size: 1.3rem; margin-top: 1rem;">
+    CoreX uygulaması, sağlıklı yaşamı destekleyen, kişisel antrenman programları ve diyet planları sunan bir platformdur.
+    Kullanıcılar, hedeflerine uygun egzersiz ve beslenme önerileri alarak daha fit ve sağlıklı bir yaşam tarzı benimseyebilirler.
+  </p>
+
+  <!-- App Store ve Play Store butonları -->
+  <div class="mt-4 d-flex gap-3">
+    <a href="#" class="btn btn-dark d-flex align-items-center gap-2" style="border-radius: 12px; padding: 10px 20px;">
+      <i class="fab fa-apple fa-2x"></i>
+      <div class="text-start">
+        <small style="font-size: 0.7rem;">Download on the</small><br>
+        <strong>App Store</strong>
       </div>
+    </a>
+
+    <a href="#" class="btn btn-success d-flex align-items-center gap-2" style="border-radius: 12px; padding: 10px 20px;">
+      <i class="fab fa-google-play fa-2x"></i>
+      <div class="text-start">
+        <small style="font-size: 0.7rem;">Get it on</small><br>
+        <strong>Google Play</strong>
+      </div>
+    </a>
+  </div>
+</div>
+
 
       <div class="col-md-6 d-flex justify-content-center">
         <div class="phone-container">
@@ -379,11 +458,7 @@
 </div>
 
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
-      integrity="sha512-papb6Q+H/wTROOCXioXU9fpj7qeq4wLh/mWvZH7JzYUJxYnmR67MXpME/70t0XmZXU9Lj9ZR65jG6vVbW5sQGA==" 
-      crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-<footer style="background-color: #918d8d; color: white; padding: 40px 0; text-align: center;">
+<footer style="background-color: #686868; color: white; padding: 40px 0; text-align: center;">
   <div class="container">
     <div class="row text-start">
       
@@ -395,7 +470,7 @@
       <div class="col-md-3 mb-4">
         <h5>İletişim</h5>
         <p>
-          Adres: Cad. No: 123, Şehir, Ülke <br>
+          Adres: Corex Cad. No: 123, Şehir: Kocaeli/izmit, Ülke:Türkiye <br>
           Telefon: +90 123 456 78 90 <br>
           E-posta: info@corex.com
         </p>
@@ -420,8 +495,9 @@
       </div>
 
     </div>
-    <hr style="border-color: rgba(255, 255, 255, 0.2);">
-    <p class="mb-0">&copy; 2025 CoreX. Tüm Hakları Saklıdır.</p>
+    <hr style="border-color: rgba(255, 255, 255, 0.2);"></hr>
+<p class="mb-0">&copy; 2025 CoreX. Tüm hakları saklıdır.</p>
+
   </div>
 </footer>
 
@@ -434,6 +510,26 @@
 
 
 
+ <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const toggleBtn = document.getElementById('darkModeToggle');
+
+      // localStorage’dan modu oku ve uygula
+      if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+      }
+
+      toggleBtn.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
+
+        if (document.body.classList.contains('dark-mode')) {
+          localStorage.setItem('darkMode', 'enabled');
+        } else {
+          localStorage.removeItem('darkMode');
+        }
+      });
+    });
+  </script>
 
 
 
@@ -446,13 +542,8 @@
 
 
 
-
-
-
-
-
-
-
+  
+</script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
