@@ -178,7 +178,7 @@
 
     /* dark mode için */
     body.dark-mode {
-      background-color: #121212;
+      background-color: #000 !important;
       color: #e0e0e0;
     }
 
@@ -213,6 +213,41 @@
     body.dark-mode .carousel-caption p {
       color: #f0f0f0 !important;
       text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);
+    }
+
+    /* Dark mode styles for phone section */
+    body.dark-mode div[style*="background-color: #f0f0f0"] {
+      background-color: #1f1f1f !important;
+    }
+
+    body.dark-mode div[style*="background-color: #f0f0f0"] p {
+      color: #e0e0e0 !important;
+    }
+
+    body.dark-mode div[style*="background-color: #f0f0f0"] h1 {
+      color: #e0e0e0 !important;
+    }
+
+    body.dark-mode div[style*="background-color: #f0f0f0"] .btn-dark {
+      background-color: #2d2d2d !important;
+      border-color: #3d3d3d !important;
+    }
+
+    body.dark-mode div[style*="background-color: #f0f0f0"] .btn-success {
+      background-color: #1a472a !important;
+      border-color: #2d5a3f !important;
+    }
+
+    /* Dark mode toggle button styles */
+    body.dark-mode #darkModeToggle {
+      background-color: #2d2d2d !important;
+      border-color: #3d3d3d !important;
+      color: #e23434 !important;
+    }
+
+    body.dark-mode #darkModeToggle:hover {
+      background-color: #3d3d3d !important;
+      border-color: #4d4d4d !important;
     }
   </style>
   <script>
@@ -319,7 +354,7 @@
         <img src="assets/img/antreman.jpg" class="card-img-top" style="height: 270px; object-fit: cover;" alt="...">
         <div class="card-body">
           <h5 class="card-title">Antreman</h5>
-          <p class="card-text">Doğru antrenman programlarıyla hedeflerine daha hızlı ulaş! Formunu koru, gücünü artır.
+          <p class="card-text">Doğru antrenman programlarıyla hedeflerine daha hızlı ulaş! Formunu koru, gücünü artır.
           </p>
 
         </div>
@@ -333,7 +368,7 @@
         <div class="card-body">
           <h5 class="card-title">Diyet ve beslenme</h5>
           <p class="card-text">Sağlıklı yaşam dengeli beslenmeyle başlar. Vücuduna en uygun beslenme
-            tüyolarını keşfet!
+            tüyolarını keşfet!
           </p>
 
         </div>
@@ -346,7 +381,7 @@
         <div class="card-body">
           <h5 class="card-title">Uyku ve dinlenme</h5>
           <p class="card-text">Kaliteli uyku ve yeterli dinlenme, fiziksel gelişimin olmazsa olmazıdır.
-            Yenilen, güç kazan!</p>
+            Yenilen, güç kazan!</p>
 
         </div>
       </div>
@@ -393,7 +428,7 @@
           Genellikle Vücut Kitle İndeksi (VKİ) gibi ölçütler kullanılarak belirlenir. VKİ değeri 18.5 ile 24.9 arasında
           olan bireyler, genel olarak ideal kilo aralığında kabul edilir. Ancak ideal kilo sadece estetik değil, sağlık
           açısından da önemlidir; kalp-damar hastalıkları, diyabet gibi birçok hastalığın riskini azaltmak için
-          hedef alınmalıdır.</p>
+          hedef alınmalıdır.</p>
       </div>
     </div>
   </div>
@@ -524,7 +559,7 @@
     document.addEventListener('DOMContentLoaded', () => {
       const toggleBtn = document.getElementById('darkModeToggle');
 
-      // localStorage’dan modu oku ve uygula
+      // localStorage'dan modu oku ve uygula
       if (localStorage.getItem('darkMode') === 'enabled') {
         document.body.classList.add('dark-mode');
       }
@@ -540,24 +575,6 @@
       });
     });
   </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
