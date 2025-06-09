@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CoreX</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4Q6Gf2aSP4eDXB8Miphtr37CMZZQ5oXLH2yaXMJ2w8e2ZtHTl7GptT4jmndRuHDT" crossorigin="anonymous">
+  <style>
+    /* yazı rengi ve underline HOVER STİLİ */
+    .navbar-nav .nav-link {
+    position: relative;
+    color: black;
+    transition: color 0.3s ease;
+    font-weight: 700;
+  }
+
+  .navbar-nav .nav-link:hover {
+    color: red;
+    font-weight: 700;
+  }
+
+  .navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 4px;
+    background-color: red;
+    left: 0;
+    bottom: -20px;
+    transition: width 0.3s ease;
+  }
+
+  .navbar-nav .nav-link:hover::after {
+    width: 100%;
+  }
+
+    /* carousel yazılarının ayarı için */
+    .carousel-caption {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      bottom: auto;
+      text-align: center;
+    }
+
+    .carousel-caption h5 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: white;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    .carousel-caption p {
+      font-size: 1.5rem;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    }
+/* kart efektleri */
+    .card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+
+  .card:hover {
+    transform: scale(1.03);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  }
+
+  .card-img-top {
+    transition: transform 0.4s ease;
+  }
+
+  .card:hover .card-img-top {
+    transform: scale(1.05);
+  }
+  .card:hover {
+  border: 2px solid #b80000; /* Canlı renkli kenarlık */
+}
+  </style>
+</head>
+
+<body>
+
+  <!-- navbar kısmı -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <div class="container-fluid">
+
+      <a class="navbar-brand fw-bold fs-2" href="#">
+        Core<p style="color: red; display: inline-block;">X</p>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav fw-bold d-flex gap-5">
+          <li class="nav-item mx-2">
+            <a class="nav-link active" aria-current="page" href="/calculate/water/water.html">Su ihtiyacı</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link active" href="/calculate/calorie/calorie.html">Kalori hesaplama</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link active" href="/calculate/ideal-weight/idealweight.html">İdeal kilo</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link active" href="/exercise/exercise.html">Antreman Önerici</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link active" href="/fat-muscle-chart/fat-muscle.html">Yağ-Kas Oranı</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+
+
+
+  <!-- carousel kısmı -->
+  <div class="container-fluid">
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+      </div>
+
+      <div class="carousel-inner">
+        <div class="carousel-item active position-relative">
+          <video class="d-block w-100" style="height: 800px; object-fit:cover;" autoplay muted loop>
+            <source src="assets/video/macvideo.mp4" type="video/mp4">
+
+          </video>
+          <!-- Yazı kısmı videonun üstüne yerleşecek -->
+          <div class="carousel-caption d-none d-md-block">
+            <h5 class="text-light fw-bold">SPORA DAİR ARADIĞIN HERŞEY BURADA.</h5>
+            <h5 style="display: inline-block; text-shadow:  100px;">Core</h5>
+            <h5 style="color: red; display: inline-block;">X</h5>
+            <p class="text-light">Sen de bize katıl, iyi yaşamaya başla..</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- card üstü yazı -->
+  <div class="container my-5 text-center">
+    <p style="font-weight: 800; font-size: 40px; line-height: 1.5; max-width: 700px; margin: 0 auto;">
+      İYİ YAŞAMAYA VE SPORA DAİR ARADIĞIN HER ŞEY BURADA!
+    </p>
+  </div>
+  <div class="container my-4 text-center">
+    <p style="font-weight: 600; font-size: 22px; line-height: 1.5; max-width: 700px; margin: 0 auto;">
+      En yeni teknolojiler ve spor ekipmanlarıyla, spor deneyimini bir adım ileri taşı!
+      Profesyonel eğitmenler ile birlikte antrenman yap, en yüksek verimi al.
+      İster kulüpte ister açık havada hayalindeki sağlıklı ve fit yaşam için
+      CoreX her zaman seninle.
+    </p>
+  </div>
+
+  <!--card kısmı-->
+  <div class="row justify-content-center gx-5">
+    <div class="col-auto">
+      <div class="card" style="width: 27rem;">
+        <img src="assets/img/antreman.jpg" class="card-img-top" style="height: 270px; object-fit: cover;" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Antreman</h5>
+          <p class="card-text">Doğru antrenman programlarıyla hedeflerine daha hızlı ulaş! Formunu koru, gücünü artır.
+          </p>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-auto">
+      <div class="card" style="width: 27rem;">
+        <img src="assets/img/diyet.jpg" class="card-img-top" style="height: 270px; object-fit: cover;" alt="...">
+
+        <div class="card-body">
+          <h5 class="card-title">Diyet ve beslenme</h5>
+          <p class="card-text">Sağlıklı yaşam dengeli beslenmeyle başlar. Vücuduna en uygun beslenme
+            tüyolarını keşfet!
+          </p>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="col-auto">
+      <div class="card" style="width: 27rem;">
+        <img src="assets/img/dinlenme.jpg" class="card-img-top" style="height: 270px; object-fit: cover;" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Uyku ve dinlenme</h5>
+          <p class="card-text">Kaliteli uyku ve yeterli dinlenme, fiziksel gelişimin olmazsa olmazıdır.
+            Yenilen, güç kazan!</p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+  <!-- çapraz ifadeler -->
+  <!-- sağ resim -->
+  <div class="container my-5">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h3 class="fw-bold">GÜNLÜK KALORİ İHTİYACI NEDİR?</h3>
+        <p>İnsan vücudunun hayatta kalabilmesi için ihtiyaç duyduğu enerji miktarıdır, bu enerji genellikle kalori ile
+          ifade edilir.
+
+          Vücudunuza gereken miktarda kalori sağlamadığınızda vücuttaki hücreler hasar görebilir, kalp, akciğer ve diğer
+          organlar yaşamak için gerekli işlemleri yapamaz hale gelebilir. Her gün ihtiyaç duyulduğu kadar kalori
+          tüketildiğinde vücut daha sağlıklı ve enerjik olur. Metabolizma ise daha etkili işlevini yerine getirir.
+          Gereğinden fazla ya da az kalori almak, sağlık sorunlarında sebep olabilir. Vücut için gerekli olan üç ana
+          besin kaynağı olan protein, karbonhidrat ve yağ kaynaklarının ortalama kalori değerleri şu şekildedir:
+        <ul>
+          <li>1 gr karbonhidrat 4 kcal içerir.</li>
+          <li>1 gram protein 4 kcal içerir.</li>
+          <li>1 gram yağ 9 kcal içerir.</li>
+        </ul>
+
+        </p>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="assets/img/kalori-ihtiyaci.jpg" alt="Görsel" class="img-fluid" style="max-width: 95%; height: auto;">
+      </div>
+
+    </div>
+  </div>
+  <!-- sol resim -->
+  <div class="container my-5">
+    <div class="row align-items-center">
+      <div class="col-md-6 text-center">
+        <img src="assets/img/idealkilo.jpg" alt="Görsel" class="img-fluid" style="max-width: 95%; height: auto;">
+      </div>
+      <div class="col-md-6">
+        <h3 class="fw-bold">İDEAL KİLO NEDİR?</h3>
+        <p>İdeal kilo, bireyin boyuna, yaşına, cinsiyetine ve vücut yapısına göre sağlıklı kabul edilen kilo aralığıdır.
+          Genellikle Vücut Kitle İndeksi (VKİ) gibi ölçütler kullanılarak belirlenir. VKİ değeri 18.5 ile 24.9 arasında
+          olan bireyler, genel olarak ideal kilo aralığında kabul edilir. Ancak ideal kilo sadece estetik değil, sağlık
+          açısından da önemlidir; kalp-damar hastalıkları, diyabet gibi birçok hastalığın riskini azaltmak için
+          hedef alınmalıdır.</p>
+      </div>
+    </div>
+  </div>
+
+  </div>
+  </div>
+  <!-- sağ resim -->
+  <div class="container my-5">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h3 class="fw-bold">GÜNLÜK SU İHTİYACI NEDİR?</h3>
+        <p>Günlük su ihtiyacını belirleyen pek çok faktör vardır. Genel olarak ele alındığında yetişkin kadın ve
+          erkekler için farklı standartlardan bahsetmek mümkündür. Sağlıklı bir yetişkin insan vücudunun günlük ortalama
+          su ihtiyacı ise yaklaşık olarak 2-3 litre arasıdır. Yine de bunun ortalama standartlara yönelik bir miktar
+          olduğunu belirtmekte yarar var.
+
+          Erkekler, fizyolojik yapıları gereği kadınlara kıyasla daha çok su tüketmeye ihtiyaç duyarlar. Bu anlamda,
+          erkeklerin su ihtiyacı çeşitli faktörlere bağlı olarak 2,5 litre ile 3,7 litre arasında değişiklik gösterir.
+
+
+        </p>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="assets/img/suihtiyacı.jpg" alt="Görsel" class="img-fluid" style="max-width: 95%; height: auto;">
+      </div>
+
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.6/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-j1CDi7MgGQ12Z7Qab0qlWQ/Qqz24Gc6BM0thvEMVjHnfYGF0rmFCozFSxQBxwHKO"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

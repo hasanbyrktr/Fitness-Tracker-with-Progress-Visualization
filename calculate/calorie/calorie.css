@@ -1,0 +1,96 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+.navbar-nav .nav-link {
+      position: relative;
+      color: black;
+      transition: color 0.3s ease;
+      font-weight: 700;
+    }
+
+.navbar-nav .nav-link:hover {
+      color: red;
+      font-weight: 700;
+    }
+
+.navbar-nav .nav-link::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 4px;
+      background-color: red;
+      left: 0;
+      bottom: -20px;
+      transition: width 0.3s ease;
+    }
+.navbar-nav .nav-link:hover::after {
+      width: 100%;
+}
+.container {
+  background-color: white;
+  max-width: 450px;
+  margin: 40px auto;
+  padding: 20px 30px 30px 30px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+     /* yazı rengi ve underline HOVER STİLİ */
+     .navbar-nav .nav-link {
+      position: relative;
+      color: black;
+      transition: color 0.3s ease;
+      font-weight: 700;
+    }
+  
+
+  
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin-bottom: 20px; 
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+input[type="number"],
+select {
+  width: 100%;
+  padding: 8px;
+  font-size: 15px;
+  border: 1.5px solid #ddd;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+.container button {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: #00b894;
+  border: none;
+  color: white;
+  font-size: 17px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.container button:hover {
+  background-color: #009f7f;
+}
+.result {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+}

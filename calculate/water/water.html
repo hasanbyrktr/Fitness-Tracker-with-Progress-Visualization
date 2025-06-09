@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Günlük Su İhtiyacı</title>
+  <link rel="stylesheet" href="water.css" />
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    
+  </style>
+</head>
+<body class="bg-light">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+    <div class="container-fluid">
+      <a style="text-decoration: none; color: black;" class="navbar-brand fw-bold fs-2" href="/index.html">
+        Core<p style="color: red; display: inline-block;">X</p>
+      </a>
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav fw-bold d-flex gap-5">
+          <li class="nav-item mx-2">
+            <a class="nav-link active" href="water.html">Su ihtiyacı</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="../calorie/calorie.html">Kalori hesaplama</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="../ideal-weight/idealweight.html">İdeal kilo</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="/exercise/exercise.html">Antreman Önerici</a>
+          </li>
+          <li class="nav-item mx-2">
+            <a class="nav-link" href="/fat-muscle-chart/fat-muscle.html">Yağ-Kas Oranı</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-5 mt-5">
+    <div class="row justify-content-center">
+      <!-- Sol: Form -->
+      <div class="col-lg-6 col-12 mb-4">
+        <div class="card shadow-sm">
+          <div class="card-body">
+            <h4 class="card-title mb-4">Günlük Su İhtiyacı Hesaplayıcı</h4>
+            <form id="waterForm">
+              <div class="mb-3">
+                <label for="weight" class="form-label">Kilonuz (kg)</label>
+                <input type="number" id="weight" class="form-control" min="0" required />
+              </div>
+              <button type="submit" class="btn btn-success w-100">Hesapla</button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <!-- Sağ: Sonuç ve Grafik -->
+      <div class="col-lg-3 col-12">
+        <div class="card shadow-sm text-center">
+          <div class="card-body">
+            <h5 class="card-title">Sonuç</h5>
+            <div id="result" class="my-3 text-start"></div>
+            <canvas id="waterChart" width="260" height="260"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="water.js"></script>
+</body>
+</html>
