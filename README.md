@@ -17,7 +17,7 @@ CoreX, sağlıklı yaşamı destekleyen, kişisel antrenman programları ve diye
 
 1. Bu repoyu klonlayın:
    ```bash
-   git clone https://github.com/kullaniciadi/Fitness-Tracker-with-Progress-Visualization.git
+   git clone https://github.com/hasanbyrktr/CoreX-Fitness-Tracker-with-Progress-Visualization.git
    ```
 2. Klasöre girin:
    ```bash
