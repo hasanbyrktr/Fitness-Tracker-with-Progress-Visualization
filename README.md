@@ -67,4 +67,3 @@ CoreX, sağlıklı yaşamı destekleyen, kişisel antrenman programları ve diye
 ![Ekran Görüntüsü 1](assets/img/1.png)
 ![Ekran Görüntüsü 2](assets/img/2.png)
 ![Ekran Görüntüsü 3](assets/img/3.png)
-![Ekran Görüntüsü 3](assets/img/4.png)
