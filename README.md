@@ -23,7 +23,7 @@ CoreX, sağlıklı yaşamı destekleyen, kişisel antrenman programları ve diye
    ```bash
    cd Fitness-Tracker-with-Progress-Visualization
    ```
-3. Herhangi bir sunucuya gerek olmadan, `index.html` dosyasını çift tıklayarak veya bir canlı sunucu (Live Server eklentisi gibi) ile açabilirsiniz.
+3. VSCode üzerinden live server eklentisini kurun. index.html dosyasına sağ tıklayıp "Open With Live Server" ile projeyi çalıştırabilirsiniz.
 
 ## Kullanılan Teknolojiler
 
